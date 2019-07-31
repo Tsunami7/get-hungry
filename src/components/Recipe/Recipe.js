@@ -1,0 +1,85 @@
+/*eslint-disable */
+import React, { Component } from 'react'
+import axios from 'axios';
+import Input from '../Input/Input'
+
+class Recipe extends Component {
+    constructor() {
+        super()
+        this.state = {
+            recipes: [],
+            query: '',
+        }
+    }
+
+    handleInputChange = (e) => {
+        this.setState({
+            query: e.target.value
+        })
+        // console.log('test')
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.getInfo()
+        this.setState({
+            query:''
+        })
+    }
+
+    getInfo = () => {
+        const APP_ID = process.env.APP_ID;
+        const APP_KEY = process.env.REACT_APP_TOKEN;
+
+        axios.get(`https://api.edamam.com/search?q=${this.state.query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
+            .then((resp) => {
+                // console.log(resp)
+
+                const { data: { hits } } = resp
+                return hits.forEach(recipe => {
+                    // console.log(recipe)
+                    this.setState({ recipes: [...this.state.recipes, recipe.recipe] })
+                });
+
+            })
+    }
+    renderIngredient=(ingredients)=>{
+        return ingredients.map(( ingredient, index)=>{
+            return <li key={index}>{ingredient.text}</li>
+        })
+    }
+
+    renderRecipes = () => {
+        if (this.state.recipes.length > 0) {
+            return this.state.recipes.map(recipe => {
+                const { label, dietLabels, calories, image, ingredients, url } = recipe
+                return(
+                    <div key={url} className="recipe-container">
+                        <h2 className="recipe title"><a href={url}>{label}</a></h2>
+                        <p>{dietLabels}</p>
+                        <h3>{calories.toFixed(2)}</h3>
+                        <img src={image} alt=''/>
+                        <ul>
+                            {this.renderIngredient(ingredients)}
+                        </ul>
+                    </div>
+                )
+            })
+        }
+        else {
+            return <h3>Search for Recipes</h3>
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <Input onChange={this.handleInputChange} onSubmit={this.handleSubmit} defaultValue={this.setState.query} name='query' title='Search' placeholder='Search'/>
+                {this.renderRecipes()}
+
+            </div>
+        )
+    }
+}
+
+export default Recipe

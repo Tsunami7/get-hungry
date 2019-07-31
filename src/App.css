@@ -1,0 +1,12 @@
+.app-container{
+  display: flex;
+  justify-content: center;
+}
+.body-container{
+  /* background-image: url("https://previews.123rf.com/images/romastudio/romastudio1603/romastudio160300280/54088843-healthy-food-background-studio-photo-of-different-fruits-on-white-wooden-table-high-resolution-produ.jpg"); */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+header{
+  text-align: center;
+}
