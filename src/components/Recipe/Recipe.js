@@ -8,7 +8,7 @@ class Recipe extends Component {
         super()
         this.state = {
             recipes: [],
-            query: '',
+            query: ''
         }
     }
 
@@ -21,10 +21,15 @@ class Recipe extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        this.setState({
+            recipes: [],
+        })
         this.getInfo()
         this.setState({
-            query:''
+            query: '',
         })
+
+        // console.log(e)
     }
 
     getInfo = () => {
@@ -33,18 +38,16 @@ class Recipe extends Component {
 
         axios.get(`https://api.edamam.com/search?q=${this.state.query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
             .then((resp) => {
-                // console.log(resp)
-
+                console.log(`${this.state.query},${APP_ID},${APP_KEY}`)
                 const { data: { hits } } = resp
                 return hits.forEach(recipe => {
                     // console.log(recipe)
                     this.setState({ recipes: [...this.state.recipes, recipe.recipe] })
                 });
-
             })
     }
-    renderIngredient=(ingredients)=>{
-        return ingredients.map(( ingredient, index)=>{
+    renderIngredient = (ingredients) => {
+        return ingredients.map((ingredient, index) => {
             return <li key={index}>{ingredient.text}</li>
         })
     }
@@ -53,12 +56,12 @@ class Recipe extends Component {
         if (this.state.recipes.length > 0) {
             return this.state.recipes.map(recipe => {
                 const { label, dietLabels, calories, image, ingredients, url } = recipe
-                return(
+                return (
                     <div key={url} className="recipe-container">
-                        <h2 className="recipe title"><a href={url}>{label}</a></h2>
+                        <h2 className="recipe title"><a href={url} target={url}>{label}</a></h2>
                         <p>{dietLabels}</p>
                         <h3>{calories.toFixed(2)}</h3>
-                        <img src={image} alt=''/>
+                        <img src={image} alt='' />
                         <ul>
                             {this.renderIngredient(ingredients)}
                         </ul>
@@ -74,9 +77,10 @@ class Recipe extends Component {
     render() {
         return (
             <div>
-                <Input onChange={this.handleInputChange} onSubmit={this.handleSubmit} defaultValue={this.setState.query} name='query' title='Search' placeholder='Search'/>
-                {this.renderRecipes()}
-
+                <Input onChange={this.handleInputChange} onSubmit={this.handleSubmit} defaultValue={this.state.query} name='query' title='Search' placeholder='Search' />
+                <div className="render-recipe-container">
+                    {this.renderRecipes()}
+                </div>
             </div>
         )
     }
