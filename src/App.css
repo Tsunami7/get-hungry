@@ -1,6 +1,7 @@
 .app-container{
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 .body-container {
   width: 100%;
@@ -14,20 +15,4 @@ header{
 main{
   display: flex;
 }
-.recipe-container{
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  border: 1px solid gray;
-  margin: 20px;
-}
-img{
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-}
-.render-recipe-container{
-  display: flex;
-  flex-wrap: wrap;
-  margin: 20px;
-}
+

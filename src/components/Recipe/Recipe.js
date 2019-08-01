@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import Input from '../Input/Input'
 
+import './Recipe.css'
+
 class Recipe extends Component {
     constructor() {
         super()
@@ -59,10 +61,12 @@ class Recipe extends Component {
                 return (
                     <div key={url} className="recipe-container">
                         <h2 className="recipe title"><a href={url} target={url}>{label}</a></h2>
+                        <div className="calories-diet-container">
                         <p>{dietLabels}</p>
-                        <h3>{calories.toFixed(2)}</h3>
+                        <h3 className="calories">Calores: {calories.toFixed(2)}</h3>
+                        </div>
                         <img src={image} alt='' />
-                        <ul>
+                        <ul className='ingredients-list'>
                             {this.renderIngredient(ingredients)}
                         </ul>
                     </div>

@@ -1,0 +1,32 @@
+.ingredients-list{
+    list-style: none;
+    padding: 0;
+}
+img{
+    width: 350px;
+    height: auto;
+    border-radius: 10px 80px 30px;
+  }
+
+.recipe-container{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border: 1px solid gray;
+    margin: 20px;
+    padding-left: 20px;
+  }
+  
+  .render-recipe-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+
+  .calories{
+      margin: 0;
+  }
+
+  .calories-diet-container{
+      
+  }
