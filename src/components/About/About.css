@@ -1,0 +1,37 @@
+.about-page{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 700px;
+    background-color: rgb(181, 231, 240);
+}
+.about-title{
+    font-size: 200%;
+    margin: 20px 0 0 0;
+
+}
+.about-api{
+    font-size: 130%;
+    margin: 10px 0;
+}
+.edaman-link{
+    font-size: 500%;
+    margin: 10px 0;
+    text-decoration: underline;
+}
+.about-p{
+    width: 700px;
+}
+.about-p-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imgs{
+    background-image: url('https://puu.sh/E0e1o/1253b6358b.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 100%;
+}

@@ -1,7 +1,29 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(81, 211, 189);
+    position: sticky;
+    top: 0;
+}
 h1{
-    height: 100px;
-    margin: 0;
+    height: 70px;
+    margin: 0 0 0 20px;
     font-size: 350%;
-    
     text-shadow: #05668D 1px 0 10px;
+}
+.search-about{
+    display: flex;
+}
+.about,
+.search{
+    margin: 0 20px 0 0;
+    height: 100%
+}
+h2{
+    align-items: center;
+    align-content: center;
+}
+.about:hover,
+.search:hover{
+    background-color: lightblue;
 }

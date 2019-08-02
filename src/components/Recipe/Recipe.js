@@ -60,12 +60,12 @@ class Recipe extends Component {
                 const { label, dietLabels, calories, image, ingredients, url } = recipe
                 return (
                     <div key={url} className="recipe-container">
-                        <h2 className="recipe title"><a href={url} target={url}>{label}</a></h2>
+                        <h2 className="recipe-title"><a href={url} target={url}>{label}</a></h2>
                         <div className="calories-diet-container">
-                        <p>{dietLabels}</p>
+                        <p className="diet-labels">{dietLabels}</p>
                         <h3 className="calories">Calores: {calories.toFixed(2)}</h3>
                         </div>
-                        <img src={image} alt='' />
+                        <a href={url} target={url}><img src={image} alt='' className="recipe-image"/></a>
                         <ul className='ingredients-list'>
                             {this.renderIngredient(ingredients)}
                         </ul>
@@ -74,13 +74,13 @@ class Recipe extends Component {
             })
         }
         else {
-            return <h3>Search for Recipes</h3>
+            return <h3 className="middle-text">Search for Recipes</h3>
         }
     }
 
     render() {
         return (
-            <div>
+            <div className="Search-items-container">
                 <Input onChange={this.handleInputChange} onSubmit={this.handleSubmit} defaultValue={this.state.query} name='query' title='Search' placeholder='Search' />
                 <div className="render-recipe-container">
                     {this.renderRecipes()}

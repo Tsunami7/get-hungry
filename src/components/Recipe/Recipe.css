@@ -2,31 +2,66 @@
     list-style: none;
     padding: 0;
 }
-img{
-    width: 350px;
+.recipe-image{
+    width: 300px;
     height: auto;
     border-radius: 10px 80px 30px;
   }
-
+img:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
 .recipe-container{
     display: flex;
     flex-direction: column;
-    width: 400px;
-    border: 1px solid gray;
+    width: 360px;
+    border: 1px solid rgb(75, 74, 74);
     margin: 20px;
-    padding-left: 20px;
+    padding: 0 30px 40px 30px;
+    background-image: url("https://puu.sh/E0bKU/8bd132b67d.jpeg");
+    background-size: 100% 100%;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
   }
   
   .render-recipe-container{
     display: flex;
     flex-wrap: wrap;
-    margin: 20px;
+    align-content: center;
+    margin: 10px 0 0 20px;
   }
 
   .calories{
-      margin: 0;
+      text-align: center;
   }
 
-  .calories-diet-container{
-      
+  form{
+    background-color: white;
+    margin: 10px 0 0 0;
+  }
+  .Search-items-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 4000px;
+    width: 100%;
+    background-image: url("https://puu.sh/E0bpz/28d5af9216.jpg");
+    background-attachment: fixed;
+    background-size: 100%;
+  }
+  .recipe-title{
+    margin: 6px 0 5px 0;
+    padding: 0 10px 0 10px;
+    background-color: rgb(243, 232, 214, 0.8);
+  }
+  a:link{
+    text-decoration: none;
+  }
+  .diet-labels{
+    margin: 6px 0;
+  }
+  .middle-text{
+    background-color: rgba(255,0,0,0.3);
+    font-size: 300%;
   }

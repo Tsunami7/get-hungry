@@ -1,6 +1,12 @@
+html{
+  height: 100%;
+  width: auto;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 .app-container{
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
 }
 .body-container {
@@ -8,11 +14,13 @@
   height: 100%;
 }
 header{
-  background-image: url("https://previews.123rf.com/images/romastudio/romastudio1603/romastudio160300280/54088843-healthy-food-background-studio-photo-of-different-fruits-on-white-wooden-table-high-resolution-produ.jpg");
   /* text-align: center; */
   width: 100%;
 }
 main{
   display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
