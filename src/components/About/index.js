@@ -13,8 +13,9 @@ function About() {
             <div></div>
             <p className="about-p"> EDAMAN structures the data for a recipe in seconds. So, several thousand recipes take several hours at most. The output provides to the publisher by EDAMAM details the most specific ingredients from each ingredient lines, their quantities and even their mapping to known existing government ingredient databases. In addition, each recipe is tagged with 40+ diet and allergen tags which allows creation of collective and better search engine.</p>
             </div>
-            <h3>EDAMAM's affiliations: </h3>
+            <h3 className="affiliations">EDAMAM's affiliations: </h3>
             <div className='imgs'></div>
+            <a href="https://github.com/Tsunami7/get-hungry" target="https://github.com/Tsunami7/get-hungry"><img className='imgs2' src="https://image.flaticon.com/icons/svg/25/25231.svg" alt=''></img></a>
         </div>
     )
 }
